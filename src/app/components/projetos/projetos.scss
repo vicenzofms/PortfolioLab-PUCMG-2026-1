@@ -1,0 +1,17 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  padding-top: 2rem;
+  gap: 1rem;
+}
+
+@media(min-width: 64rem) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "proj1 proj1 proj2 proj3"
+      "proj4 proj5 proj5 proj6";
+    gap: 1.5rem;
+  }
+}

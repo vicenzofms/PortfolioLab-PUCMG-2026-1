@@ -1,0 +1,22 @@
+<div
+  class="rounded-lg h-full border-2 border-neutral dark:border-darkNeutral dark:bg-darkBg bg-lightBg hover:border-primary-500/60 transition-all p-4 flex flex-col justify-between hover:scale-103"
+>
+  <div>
+    <p class="text-neutralText font-semibold">{{ suptitle }}</p>
+    <h2 class="font-bold text-xl">{{ title }}</h2>
+    <p class="text-lg">
+      <ng-content></ng-content>
+    </p>
+  </div>
+  <div class="flex justify-end gap-2">
+    @if (githubLink) {
+      <a
+        [href]="githubLink"
+        target="_blank"
+        class="rounded-md bg-lightBg dark:bg-darkBg border-1 border-neutral dark:border-darkNeutral p-2 flex items-center justify-center hover:border-primary-500 cursor-pointer hover:bg-primary-100/30"
+      >
+        <ng-icon name="ionLogoGithub"></ng-icon>
+      </a>
+    }
+  </div>
+</div>

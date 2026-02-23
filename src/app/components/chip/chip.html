@@ -1,0 +1,10 @@
+<div
+  class="flex items-center gap-2 p-2 px-4 border-2 rounded-4xl hover:border-primary-500 border-neutral dark:border-darkNeutral transition-all hover:text-primary-500 font-semibold hover:bg-primary-100/10 cursor-pointer hover:-translate-y-1"
+>
+  @if (iconName.length > 0) {
+    <div class="text-lg flex items-center">
+      <ng-icon [name]="iconName"></ng-icon>
+    </div>
+  }
+  <span>{{ text }}</span>
+</div>

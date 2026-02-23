@@ -23,7 +23,13 @@
   --color-secondary-900: var(--color-yellow-900);
 
   --color-darkBg: var(--color-gray-950);
+  --color-lightBg: var(--color-gray-100);
   --color-darkBgText: var(--color-slate-100);
+  --color-lightBgText: var(--color-slate-800);
+
+  --color-neutral: var(--color-slate-300);
+  --color-darkNeutral: var(--color-slate-800);
+  --color-neutralText: var(--color-slate-500);
 
   --font-display: "Inter", sans-serif;
   --font-fira: "Fira Code", sans-mono;
