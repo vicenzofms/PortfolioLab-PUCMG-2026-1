@@ -1,0 +1,41 @@
+<header
+  class="dark:bg-darkBg bg-white shadow-lg shadow-primary-500/40 font-semibold md:px-40 md:py-3 flex md:gap-6 justify-end md:rounded-b-3xl sticky top-0 px-4"
+>
+  <div class="mr-auto flex gap-1">
+    <button
+      type="button"
+      (click)="toggleTheme()"
+      class="cursor-pointer text-2xl flex justify-center items-center w-10 hover:shadow-[0_0_12px_var(--color-primary-500)] rounded-full"
+    >
+      <ng-icon [name]="theme === 'dark' ? 'heroSunSolid' : 'heroMoonSolid'"></ng-icon>
+    </button>
+    <a
+      href="#"
+      class="hover:bg-primary-500 hover:text-white dark:hover:bg-white dark:hover:text-primary-900 rounded-md p-2 transition delay-75 hidden md:flex"
+    >
+      <ng-icon name="heroHomeSolid"></ng-icon> Home</a
+    >
+  </div>
+  <a
+    href="#sobre"
+    class="dark:hover:bg-white hover:bg-primary-500 hover:text-white dark:hover:text-primary-900 rounded-md p-2 transition delay-75 hidden md:flex"
+  >
+    <ng-icon name="heroUserSolid"></ng-icon> Sobre Mim</a
+  >
+  <a
+    href="#projetos"
+    class="dark:hover:bg-white hover:bg-primary-500 hover:text-white dark:hover:text-primary-900 rounded-md p-2 transition delay-75 hidden md:flex"
+  >
+    <ng-icon name="heroFolderSolid"></ng-icon> Projetos</a
+  >
+  <a
+    href="#contato"
+    class="dark:hover:bg-white hover:bg-primary-500 hover:text-white dark:hover:text-primary-900 rounded-md p-2 transition delay-75 hidden md:flex"
+  >
+    <ng-icon name="heroChatBubbleLeftRightSolid"></ng-icon> Entre em contato!</a
+  >
+
+  <button type="button" class="p-3 text-3xl md:hidden">
+    <ng-icon name="heroBars3Solid"></ng-icon>
+  </button>
+</header>
