@@ -3,11 +3,13 @@ import { Component } from '@angular/core';
 import { SobreComponent } from '../../components/sobre/sobre.component';
 import { ProjetosComponent } from '../../components/projetos/projetos.component';
 import { invokeParticles } from '../../app';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   styleUrl: './home.scss',
   templateUrl: './home.html',
-  imports: [CommonModule, SobreComponent, ProjetosComponent],
+  standalone: true,
+  imports: [CommonModule, SobreComponent, ProjetosComponent, FooterComponent],
 })
 export class HomePage {
   ngOnInit(): void {
