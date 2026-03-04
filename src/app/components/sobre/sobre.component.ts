@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ChipComponent } from '../chip/chip.component';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-sobre-mim',
@@ -7,4 +8,6 @@ import { ChipComponent } from '../chip/chip.component';
   templateUrl: './sobre.html',
   imports: [ChipComponent],
 })
-export class SobreComponent {}
+export class SobreComponent {
+  tSer = inject(TranslationService);
+}

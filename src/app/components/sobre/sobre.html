@@ -1,17 +1,17 @@
 <div class="md:p-36 p-8 flex md:flex-row flex-col justify-center items-center gap-20">
   <div class="flex flex-col gap-4 justify-center">
-    <h1 class="font-bold text-5xl">Olá, seja bem vindo!</h1>
-    <h2 class="font-bold text-4xl">
-      Eu sou
+    <h1 class="font-bold text-5xl">{{ tSer.translate('tituloOla') }}</h1>
+    <h2 class="font-bold text-4xl overflow-visible lg:text-nowrap">
+      {{ tSer.translate('euSou') }}
       <span class="font-fira neon-text inline-block hover:scale-105 hover:px-6 transition-all">{{
         '< Vicenzo Fonseca />'
       }}</span>
     </h2>
     <p class="font-semibold leading-[1.5] text-xl pt-8 max-w-[600px]">
-      Tenho 19 anos, sou estudante de
-      <span class="neon-text">Engenharia de Software</span> na PUC Minas. Comecei a programar há 8
-      anos e desde então tive contato com diversas tecnologias, principalmente
-      <span class="neon-text-secondary font-fira">Angular</span> e
+      {{ tSer.translate('pApresentacao1') }}
+      <span class="neon-text">{{ tSer.translate('engSoftware') }}</span>
+      {{ tSer.translate('pApresentacao2') }}
+      <span class="neon-text-secondary font-fira">Angular</span> {{ tSer.translate('e') }}
       <span class="neon-text-secondary font-fira">Firebase</span>
     </p>
   </div>
@@ -24,7 +24,9 @@
   </div>
 </div>
 <div class="md:py-6 md:px-42 dark:bg-darkBg bg-lightBg flex flex-col items-center">
-  <h1 class="text-4xl font-bold text-center neon-text py-5">Tecnologias Mais Utilizadas</h1>
+  <h1 class="text-4xl font-bold text-center neon-text py-5">
+    {{ tSer.translate('tecnologiasUsadas') }}
+  </h1>
   <div class="py-5 w-full carouselTecnologias flex sm:justify-center">
     <div
       class="grupoTecnologias sm:flex sm:justify-center sm:items-center sm:w-full sm:max-w-[1200px] sm:gap-2 sm:flex-wrap"
