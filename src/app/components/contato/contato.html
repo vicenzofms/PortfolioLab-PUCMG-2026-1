@@ -1,0 +1,74 @@
+<div
+  class="md:py-20 xl:px-42 md:px-20 px-4 py-10 flex flex-col items-center dark:bg-darkBg bg-lightBg"
+>
+  <h1 class="text-4xl font-bold pb-10 text-center neon-text">Entre em Contato</h1>
+
+  <div
+    class="w-full max-w-[650px] bg-white dark:bg-gray-900 border border-neutral dark:border-darkNeutral rounded-2xl shadow-lg shadow-primary-500/10 p-8 md:p-12"
+  >
+    <form #contatoForm="ngForm" (ngSubmit)="onSubmit(contatoForm)" class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <label for="nome" class="font-semibold text-lg">Nome</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          [(ngModel)]="contato.nome"
+          required
+          minlength="3"
+          #nome="ngModel"
+          placeholder="Seu nome"
+          class="inputField"
+        />
+        @if (nome.invalid && nome.touched) {
+          <span class="text-red-500 text-sm">Nome é obrigatório (mínimo 3 caracteres).</span>
+        }
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="email" class="font-semibold text-lg">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="contato.email"
+          required
+          email
+          #email="ngModel"
+          placeholder="seu@email.com"
+          class="inputField"
+        />
+        @if (email.invalid && email.touched) {
+          <span class="text-red-500 text-sm">Informe um email válido.</span>
+        }
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="mensagem" class="font-semibold text-lg">Mensagem</label>
+        <textarea
+          id="mensagem"
+          name="mensagem"
+          [(ngModel)]="contato.mensagem"
+          required
+          minlength="10"
+          #mensagem="ngModel"
+          placeholder="Escreva sua mensagem..."
+          rows="5"
+          class="inputField resize-none"
+        ></textarea>
+        @if (mensagem.invalid && mensagem.touched) {
+          <span class="text-red-500 text-sm">Mensagem é obrigatória (mínimo 10 caracteres).</span>
+        }
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="contatoForm.invalid"
+        class="flex items-center justify-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 px-6 rounded-lg shadow-[0_0_20px_var(--color-primary-500)] hover:shadow-[0_0_30px_var(--color-primary-500)] transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
+      >
+        <ng-icon name="heroPaperAirplaneSolid"></ng-icon>
+        Enviar Mensagem
+      </button>
+    </form>
+  </div>
+</div>
