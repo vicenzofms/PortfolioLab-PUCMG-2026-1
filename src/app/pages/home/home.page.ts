@@ -11,7 +11,14 @@ import { FooterComponent } from '../../components/footer/footer.component';
   styleUrl: './home.scss',
   templateUrl: './home.html',
   standalone: true,
-  imports: [CommonModule, SobreComponent, ProjetosComponent, ExperienciaComponent, ContatoComponent],
+  imports: [
+    CommonModule,
+    SobreComponent,
+    ProjetosComponent,
+    ExperienciaComponent,
+    ContatoComponent,
+    FooterComponent,
+  ],
 })
 export class HomePage {
   ngOnInit(): void {
