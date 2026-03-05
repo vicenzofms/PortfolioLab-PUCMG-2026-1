@@ -8,7 +8,7 @@
   <tr>
     <td width="800px">
       <div align="justify">
-        O <b>PortfolioLab</b> é um portfólio pessoal desenvolvido como projeto acadêmico da disciplina de <b>Laboratório de Desenvolvimento de Software</b> na <a href="https://www.pucminas.br/">PUC Minas</a>. A aplicação web apresenta informações pessoais, tecnologias dominadas e projetos realizados, com suporte a <i>tema claro/escuro</i>, <i>animações de partículas</i> no fundo, <i>design responsivo</i> e uma interface moderna construída com <b>Angular</b> e <b>Tailwind CSS</b>.
+        O <b>PortfolioLab</b> é um portfólio pessoal desenvolvido como projeto acadêmico da disciplina de <b>Laboratório de Desenvolvimento de Software</b> na <a href="https://www.pucminas.br/">PUC Minas</a>. A aplicação web apresenta informações pessoais, tecnologias dominadas, projetos realizados e experiências profissionais, com suporte a <i>internacionalização (PT-BR/EN)</i>, <i>tema claro/escuro</i>, <i>animações de partículas</i> no fundo, <i>design responsivo</i> e uma interface moderna construída com <b>Angular</b> e <b>Tailwind CSS</b>.
       </div>
     </td>
     <td>
@@ -62,11 +62,13 @@ O **PortfolioLab** foi criado como projeto acadêmico da disciplina de **Laborat
 
 - 🌙 **Tema Claro/Escuro:** Alternância dinâmica entre temas com persistência visual.
 - ✨ **Animação de Partículas:** Fundo interativo com Particles.js que se adapta ao tema selecionado.
+- 🌐 **Internacionalização (i18n):** Suporte a Português (BR) e Inglês (EN) com troca dinâmica de idioma.
 - 👤 **Seção Sobre Mim:** Apresentação pessoal com foto e descrição.
 - 🛠️ **Tecnologias:** Carrossel/grid de chips exibindo as tecnologias mais utilizadas.
 - 📂 **Projetos:** Grid responsivo de cards com projetos desenvolvidos e links para o GitHub.
+- 💼 **Experiência:** Carrossel horizontal com cards de experiências profissionais.
+- 📬 **Seção de Contato:** Formulário de contato integrado à página principal.
 - 📱 **Design Responsivo:** Layout adaptável para dispositivos móveis, tablets e desktops.
-- 📬 **Página de Contato:** Rota dedicada para informações de contato.
 - 🧭 **Navegação SPA:** Roteamento client-side com Angular Router e navegação por âncoras.
 
 ---
@@ -144,6 +146,9 @@ ng serve
 ├── README.md                    # 📘 Documentação principal
 │
 ├── /public                      # 📂 Arquivos estáticos públicos
+│   └── /i18n                    # 🌐 Arquivos de tradução
+│       ├── br.json              # 🇧🇷 Traduções em Português (BR)
+│       └── en.json              # 🇺🇸 Traduções em Inglês (EN)
 │
 └── /src                         # 📂 Código-fonte da aplicação
     ├── index.html               # 🌐 HTML principal (entry point)
@@ -154,34 +159,26 @@ ng serve
         ├── app.ts               # 🧩 Componente raiz (tema + partículas)
         ├── app.html             # 📄 Template raiz (header + router-outlet)
         ├── app.scss             # 🎨 Estilos do componente raiz
-        ├── app.routes.ts        # 🧭 Definição de rotas (Home, Contato)
+        ├── app.routes.ts        # 🧭 Definição de rotas
         ├── app.config.ts        # ⚙️ Configuração do app (providers)
         ├── particles-config.ts  # ✨ Configuração do Particles.js (claro/escuro)
         │
+        ├── /services            # 🔧 Serviços da aplicação
+        │   └── translation.service.ts  # 🌐 Serviço de internacionalização (i18n)
+        │
         ├── /components          # 🧱 Componentes reutilizáveis
-        │   ├── /header          # 🧭 Barra de navegação (tema, links, menu)
+        │   ├── /header          # 🧭 Barra de navegação (tema, idioma, links)
         │   ├── /sobre           # 👤 Seção "Sobre Mim" + tecnologias
         │   ├── /projetos        # 📂 Grid de projetos
         │   ├── /projeto-card    # 🃏 Card individual de projeto
-        │   └── /chip            # 🏷️ Chip de tecnologia com ícone
+        │   ├── /chip            # 🏷️ Chip de tecnologia com ícone
+        │   ├── /experiencia     # 💼 Carrossel de experiências profissionais
+        │   ├── /contato         # 📬 Formulário de contato
+        │   └── /footer          # 📋 Rodapé da aplicação
         │
         └── /pages               # 📄 Páginas da aplicação
-            ├── /home            # 🏠 Página inicial (Sobre + Projetos)
-            └── /contato         # 📬 Página de contato
+            └── /home            # 🏠 Página inicial (Sobre + Projetos + Experiência + Contato)
 ```
-
----
-
-## 🎥 Demonstração
-
-### 🌐 Aplicação Web
-
-|               Tela               |         Captura de Tela         |
-| :------------------------------: | :-----------------------------: |
-| **Página Inicial (Tema Escuro)** | **Página Inicial (Tema Claro)** |
-|        _Screenshot aqui_         |        _Screenshot aqui_        |
-|      **Seção de Projetos**       |      **Página de Contato**      |
-|        _Screenshot aqui_         |        _Screenshot aqui_        |
 
 ---
 
@@ -198,9 +195,9 @@ ng serve
 
 ## 👥 Autores
 
-| 👤 Nome                        | GitHub                                                                                                                                                                | 📤 Email |
-| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Vicenzo Fonseca de Mello Souza | <div align="center"><a href="https://github.com/vicenzofonseca"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | —        |
+| 👤 Nome                        | GitHub                                                                                                                                                            | 📤 Email |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Vicenzo Fonseca de Mello Souza | <div align="center"><a href="https://github.com/vicenzofms"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | —        |
 
 ---
 
