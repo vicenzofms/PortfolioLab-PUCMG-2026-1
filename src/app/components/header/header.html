@@ -43,7 +43,58 @@
     <ng-icon name="heroChatBubbleLeftRightSolid"></ng-icon> {{ tSer.translate('abaContato') }}</a
   >
 
-  <button type="button" class="p-3 text-3xl lg:hidden items-center flex justify-center">
+  <button
+    type="button"
+    (click)="toggleMenu()"
+    class="cursor-pointer p-3 text-3xl lg:hidden items-center flex justify-center"
+  >
     <ng-icon name="heroBars3Solid"></ng-icon>
   </button>
 </header>
+
+<!-- Overlay -->
+<div
+  class="fixed inset-0 bg-black/50 z-40 transition-opacity lg:hidden"
+  [class.opacity-0]="!menuOpen"
+  [class.pointer-events-none]="!menuOpen"
+  (click)="closeMenu()"
+></div>
+
+<!-- Sidebar mobile -->
+<nav
+  class="fixed top-0 right-0 h-full w-64 dark:bg-darkBg bg-white shadow-xl z-50 flex flex-col p-6 gap-4 transition-transform duration-300 lg:hidden"
+  [class.translate-x-0]="menuOpen"
+  [class.translate-x-full]="!menuOpen"
+>
+  <button type="button" (click)="closeMenu()" class="cursor-pointer self-end text-3xl mb-4">
+    <ng-icon name="heroXMarkSolid"></ng-icon>
+  </button>
+  <a
+    href="#sobre"
+    (click)="closeMenu()"
+    class="flex items-center gap-2 p-3 rounded-lg hover:bg-primary-500/10 hover:text-primary-600 dark:hover:text-primary-500 transition-all"
+  >
+    <ng-icon name="heroUserSolid"></ng-icon> {{ tSer.translate('abaSobreMim') }}</a
+  >
+  <a
+    href="#projetos"
+    (click)="closeMenu()"
+    class="flex items-center gap-2 p-3 rounded-lg hover:bg-primary-500/10 hover:text-primary-600 dark:hover:text-primary-500 transition-all"
+  >
+    <ng-icon name="heroFolderSolid"></ng-icon> {{ tSer.translate('abaProjetos') }}</a
+  >
+  <a
+    href="#experiencia"
+    (click)="closeMenu()"
+    class="flex items-center gap-2 p-3 rounded-lg hover:bg-primary-500/10 hover:text-primary-600 dark:hover:text-primary-500 transition-all"
+  >
+    <ng-icon name="heroBriefcaseSolid"></ng-icon> {{ tSer.translate('abaExperiencia') }}</a
+  >
+  <a
+    href="#contato"
+    (click)="closeMenu()"
+    class="flex items-center gap-2 p-3 rounded-lg hover:bg-primary-500/10 hover:text-primary-600 dark:hover:text-primary-500 transition-all"
+  >
+    <ng-icon name="heroChatBubbleLeftRightSolid"></ng-icon> {{ tSer.translate('abaContato') }}</a
+  >
+</nav>

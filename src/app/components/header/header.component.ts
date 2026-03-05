@@ -8,6 +8,7 @@ import {
   heroBriefcaseSolid,
   heroChatBubbleLeftRightSolid,
   heroBars3Solid,
+  heroXMarkSolid,
   heroSunSolid,
   heroMoonSolid,
 } from '@ng-icons/heroicons/solid';
@@ -28,6 +29,7 @@ import { TranslationService } from '../../services/translation.service';
       heroBriefcaseSolid,
       heroChatBubbleLeftRightSolid,
       heroBars3Solid,
+      heroXMarkSolid,
       heroMoonSolid,
       heroSunSolid,
     }),
@@ -35,16 +37,21 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class HeaderComponent {
   tSer = inject(TranslationService);
+  menuOpen = false;
 
   @Input({ required: true }) theme!: 'dark' | 'light';
   @Output('changeTheme') changeTheme = new EventEmitter();
 
-  ngOnInit() {
-    console.log('Ola!');
-  }
-
   toggleTheme() {
     this.changeTheme.emit();
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 
   changeLanguage() {
